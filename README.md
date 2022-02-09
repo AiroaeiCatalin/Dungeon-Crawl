@@ -1,119 +1,194 @@
-# Dungeon Crawl (sprint 1)
+<!-- PROJECT LOGO -->
 
-## Story
 
+  <h3 align="center">🎮 Dungeon Crawl 🎮</h3>
+
+  <p align="center">
+    An awesome rogue-like game to play when you're bored or the weather screams stay home!
+    <br />
+    <a href="https://github.com/AiroaeiCatalin/Dungeon-Crawl"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/AiroaeiCatalin/Dungeon-Crawl">View Demo</a>
+    ·
+    <a href="https://github.com/AiroaeiCatalin/Dungeon-Crawl/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/AiroaeiCatalin/Dungeon-Crawl/issues">Request Feature</a>
+  </p>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+Do you miss that old feeling of playing a roguelike game? If that is the case then Dungeon Crawl is the perfect choice for you. Dungen Crawl is a game developed in Java in an OOP manner.
+What can you do?
+You can walk through different areas of the maps that are unlocked by picking up keys and you will have to collect items such as weapons, shields, potions in order to assist you in your quest of battling the monsters of the dungeon. Be careful! If you are not paying attention you can get severely injured or burnt and you can die and start the game all over again. 
 [Roguelikes](https://en.wikipedia.org/wiki/Roguelike) are one of the oldest
 types of video games, the earliest ones were made in the 70s, they were inspired
 a lot by tabletop RPGs. Roguelikes have the following in common usually:
 
-- They are tile-based.
-- The game is divided into turns, e.g. you make one action, then the other
-  entities (monsters, allies, etc. controlled by the CPU) make one.
-- Usually the task is to explore a labyrinth and retrieve some treasure from its
-  bottom.
-- They feature permadeath: if you die its game over, you need to start from the
-  beginning again.
-- Are heavily using procedural generation: Levels, monster placement, items,..
-  are randomized, so the game does not get boring.
-
-Your task will be to create a roguelike! You can deviate from the rules above,
-the important bit is that it should be fun!
-
-## What are you going to learn?
-
-- Get more practice in OOP
-- Design patterns: layer separation (All of the game logic, i.e., player
-  movement, game rules, and so on), is in the `logic` package, completely
-  independent of user interface code. In principle, you could implement a
-  completely different interface e.g. terminal, web, Virtual Reality, etc. for
-  the same logic code.)
-
-## Tasks
-
-1. Understand the existing code, classes and tests so you can make changes. You should do this before planning everything else. It will help you understand what is going on.
-    - Student has a class diagram in a digialized format which 
-- contains enums, classes, interfaces with all fields, methods
-- show connections between classes: inheritance, aggregation, composition
-- show multiplicity of connections (1..1, 1..*, *..*)
-
-2. Create a game logic which restricts the movement of the player so s/he cannot run into walls and monsters.
-    - The hero is not able to move into walls.
-    - The hero is not able to move into monsters.
-
-3. There are items lying around the dungeon. They are visible in the GUI.
-    - There are at least 2 item types, for instance a key, and a sword.
-    - There can be one item in a map square.
-    - A player can stand on the same square as an item.
-    - The item has to be displayed on screen (unless somebody stands on the same square)
-
-4. Create a feature that allows the hero to pick up an item.
-    - There is a "Pick up" button on the right side of screen.
-    - After the player clicks the button, the item the hero is standing on should be gone from map.
-
-5. Show picked up items in the inventory list.
-    - There is an `Inventory` list on the screen.
-    - After the hero picks up an item, it should appear in inventory.
-
-6. Make the hero to able to attack monsters by moving into them.
-    - Attacking a monster removes 5 health points. If health of a monster goes below 0, it dies and disappears.
-    - Create a feature where the hero attack a monster, and it doesn't die, it also attacks the hore at the same time (but is a bit weaker, and only removes 2 health).
-    - Having a weapon should increase your attack strength.
-    - Different monsters have different health and attack strength.
-
-7. Create doors in the dungeon that open by using keys.
-    - There are two new square types, closed door, and open door.
-    - The hero cannot pass through a closed door, unless it has a key in his/her inventory. Then it becomes an open door.
-
-8. Create three different monster types with different behaviors.
-    - There are at least three different monster types with different behaviors.
-    - One type of monster does not move at all.
-    - One type of monster moves randomly. It cannot go trough walls or open doors.
-
-9. [OPTIONAL] Create a more sophisticated movement AI.
-    - One type of monster moves around randomly and teleports to a random free square every few turns.
-    - A custom movement logic is implemented (like Ghosts that can move trough walls, monster that chases the player, etc.)
-
-10. Create maps that have more varied scenery. Take a look at the tile sheet (tiles.png). Get inspired!
-    - At least three more tiles are used. These can be more monsters, items, or background. At least one of them has to be not purely decorative, but have some effect on gameplay.
-
-11. [OPTIONAL] Allow the player to set a name for my character. This name will also function as a cheat code!
-    - There is a `Name` label and text field on the screen.
-    - If the name given is one of the game developers' name, the player can walk through walls.
-
-12. [OPTIONAL] Make the game sound fun by implementing audio effects, when player or enemies do stuff
-    - There is a footstep sound, that plays, whenever the player takes a step
-    - There is an attack sound, whenever player and/or an enemy attacks someone This sound might vary depending on the weapon (sword, axe, arrow)
-    - Enemies such as skeletons or ghosts play characteristic sounds randomly every few seconds
-    - Add some background music to your game!
-
-13. Add the possibility to add more levels.
-    - There are at least two levels.
-    - There is a square type "stairs down". Entering this square moves the player to a different map.
-
-14. Implement bigger levels than the game window.
-    - Levels are larger than the game window (for example 3 screens wide and 3 screens tall).
-    - When the player moves the player character stays in the center of the view.
-
-## General requirements
-
-None
-
-## Hints
-
-- Start with the smaller tasks, and then move into the more difficult ones
-- Before making any changes make sure you understand the whole starting code
-- Open the project in IntelliJ IDEA. This is a Maven project, so you will need to
-open `pom.xml`. The project is using JavaFX, use the `javafx` maven plugin to
-build and run the program. Build: `mvn javafx:compile`, run: `mvn javafx:run`.
-- You don't need to dwelve into JavaFX's technicalities much, most of the GUI is ready
+Here are some of the main functionalities:
+* Players can move and battle with monsters on two different maps
+* Players can pick up weapons or shields in order to assist them to battle the enemies of the dungeon
+* Players can pick up health potions in order to heal so they don't die when fighting the monsters or going through a fire
+* Players can pick up keys in order to advance through the levels
+* Players can save and load games
 
 
-## Background materials
+### Built With
 
-- <i class="far fa-book-open"></i> [RogueBasin, a wiki with lots of resources on Roguelike creation](http://roguebasin.com/index.php?title=Articles)
-- <i class="far fa-exclamation"></i> [Basics of OOP](project/curriculum/materials/pages/oop/basics-of-object-oriented-programming.md)
-- <i class="far fa-exclamation"></i> [UML diagrams](project/curriculum/materials/pages/general/uml-unified-modeling-language.md)
-- <i class="far fa-exclamation"></i> [How to design classes](project/curriculum/materials/pages/java/how-to-design-classes.md)
-- <i class="far fa-book-open"></i> [JavaFX](https://en.wikipedia.org/wiki/JavaFX)
-- <i class="far fa-book-open"></i> [JavaFX Tutorial](http://tutorials.jenkov.com/javafx/index.html)
-- [1-Bit Pack by Kenney](https://kenney.nl/assets/bit-pack)
+* [Java](https://www.java.com/en/)
+
+
+#### Version control
+* [Github](https://www.gtihub.com/)
+
+#### Project Management
+* [Trello](https://www.atlassian.com/software/jira?&aceid=&adposition=&adgroup=89541897982&campaign=9124878150&creative=415542514747&device=c&keyword=jira&matchtype=e&network=g&placement=&ds_kids=p51242161283&ds_e=GOOGLE&ds_eid=700000001558501&ds_e1=GOOGLE&gclid=Cj0KCQiAnKeCBhDPARIsAFDTLTIUjm6m9LQssN_d15V_dYNqPiWaS_df09mdcnHPj-QkqTKrZfAjB6kaAhdEEALw_wcB&gclsrc=aw.ds)
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+This application can be tested by installing all prerequisites, clone the app, run it and enjoy it!
+### Prerequisites
+
+All prerequisites must be installed, accordingly to the technologies used in this project, for example: You have to make sure you have the JDK and java 11 installed.
+
+### Installation
+
+* Backend
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/AiroaeiCatalin/Dungeon-Crawl
+   ```
+2. Open the project through the pom.xml file
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+Further I will shortly name, describe and visualize some main features of the game.
+* Enter your name
+![Screenshot 2022-02-09 at 18 30 10](https://user-images.githubusercontent.com/37214035/153254820-a25da43c-235e-403e-a00b-ed2fac46c9db.png)
+
+* General view
+![Screenshot 2022-02-09 at 18 30 36](https://user-images.githubusercontent.com/37214035/153254870-48fde5a2-c88b-4e4e-9ce5-86c661363d05.png)
+
+* Picked up sword
+![Screenshot 2022-02-09 at 18 30 56](https://user-images.githubusercontent.com/37214035/153254966-fe489410-5d46-4617-9c16-108ed57bbe2b.png)
+
+* Load from .txt file
+![Screenshot 2022-02-09 at 18 31 06](https://user-images.githubusercontent.com/37214035/153254998-e882d4af-e3ae-48a2-8ca2-2c5a4a8b7591.png)
+
+* Save as .txt or as .json
+![Screenshot 2022-02-09 at 18 31 17](https://user-images.githubusercontent.com/37214035/153255034-ac5f804b-467a-4cd6-a94c-03850303562d.png)
+
+* Load from .json
+![Screenshot 2022-02-09 at 18 31 50](https://user-images.githubusercontent.com/37214035/153255089-0ff62a88-c142-4a81-a2d2-703d8a2dcd07.png)
+
+* Picked key
+![Screenshot 2022-02-09 at 18 32 58](https://user-images.githubusercontent.com/37214035/153255166-6f7a1920-4599-4255-9d93-d340a127ddad.png)
+
+* Second map and finish the game
+![Screenshot 2022-02-09 at 18 33 55](https://user-images.githubusercontent.com/37214035/153255202-aa81c1af-68ee-4c2a-9705-9da2eb34961c.png)
+
+
+
+
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+The project development took place through 2 Agile iterations, each iteration taking 5 days. A short complete roadmap bellow:
+
+![agile-logo](https://user-images.githubusercontent.com/72221647/138440913-f67be820-c3a8-46d2-a35c-1f847acb2c48.png)
+
+
+* Sprint 1: Created core objects, maps, items, players and enemies entities
+* Sprint 2: Created save, load, and some bug fixes
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+<!-- CONTACT -->
+## Contact
+
+Airoaei Catalin - [@My Github](https://github.com/AiroaeiCatalin) [@My LinkedIn](https://www.linkedin.com/in/airoaei-catalin/) - airoaei.catalin@gmail.com
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [Codecool Romania :thumbsup:](https://codecool.com/ro/)
+* [React Documentation](https://reactjs.org/)
+* [Spring Documentation](https://docs.spring.io/)
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/badge/Contributers-2-brightgreen
+[contributors-url]: https://github.com/marius-ceobanu/Poke-Battlez-Frontend/graphs/contributors
+[forks-shield]: https://img.shields.io/badge/Forks-0-blue
+[forks-url]: https://github.com/marius-ceobanu/Poke-Battlez-Frontend/network/members
+[stars-shield]: https://img.shields.io/badge/Stars-2-blue
+[stars-url]: https://github.com/marius-ceobanu/Poke-Battlez-Frontend/stargazers
+[issues-shield]: https://img.shields.io/github/issues/marius-ceobanu/Poke-Battlez-Frontend
+[issues-url]: https://github.com/marius-ceobanu/Poke-Battlez-Frontend/issues
+[linkedin-shield]: https://img.shields.io/twitter/url?label=Linkedin%20-%20Marius&logo=LINKEDIN&style=social&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fmarius-ciprian-ceobanu-3431157b
+[linkedin-marius-url]: https://www.linkedin.com/in/marius-ciprian-ceobanu-3431157b
+[github-marius-shield]: https://img.shields.io/twitter/url?label=GitHub%20-%20Marius&logo=Github&style=social&url=https%3A%2F%2Fgithub.com%2Fmarius-ceobanu
+[github-marius-url]: https://github.com/marius-ceobanu
+[github-razvan-shield]: https://img.shields.io/twitter/url?label=GitHub%20-%20Razvan&logo=Github&style=social&url=https%3A%2F%2Fgithub.com%2Frgrigore
+[github-razvan-url]: https://github.com/rgrigore
+[chat-png]: doc_images/chat.png
+[register-png]: doc_images/register.png
+[login-png]: doc_images/login.png
+[login-gif]: doc_images/login.gif
+[PM-gif]: doc_images/PM.gif
+[team-gif]: doc_images/team.gif
+[challenge-gif]: doc_images/challenge.gif
+[battle-gif]: doc_images/battle.gif
+[agile]: doc_images/agile-logo.png
